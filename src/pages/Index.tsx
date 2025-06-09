@@ -1,12 +1,34 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useState } from "react";
+import { Sidebar } from "@/components/Sidebar";
+import { HomePage } from "@/components/HomePage";
+import { Dashboard } from "@/components/Dashboard";
+import { WatchParty } from "@/components/WatchParty";
+
+type ActivePage = 'home' | 'dashboard' | 'watch-party';
 
 const Index = () => {
+  const [activePage, setActivePage] = useState<ActivePage>('home');
+
+  const renderActivePage = () => {
+    switch (activePage) {
+      case 'home':
+        return <HomePage />;
+      case 'dashboard':
+        return <Dashboard />;
+      case 'watch-party':
+        return <WatchParty />;
+      default:
+        return <HomePage />;
+    }
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white flex">
+      <Sidebar activePage={activePage} onPageChange={setActivePage} />
+      <main className="flex-1 overflow-hidden">
+        {renderActivePage()}
+      </main>
     </div>
   );
 };
