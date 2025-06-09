@@ -1,14 +1,10 @@
-# Welcome to your Lovable project
+# FireTV
 
 ## Project info
 
 **URL**: https://lovable.dev/projects/147abf2e-1624-450d-9e84-58e098eb5fb0
 
-## How can I edit this code?
 
-There are several ways of editing your application.
-
-**Use Lovable**
 
 Simply visit the [Lovable Project](https://lovable.dev/projects/147abf2e-1624-450d-9e84-58e098eb5fb0) and start prompting.
 
