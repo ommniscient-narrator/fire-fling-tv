@@ -4,8 +4,9 @@ import { Sidebar } from "@/components/Sidebar";
 import { HomePage } from "@/components/HomePage";
 import { Dashboard } from "@/components/Dashboard";
 import { WatchParty } from "@/components/WatchParty";
+import { AlternatePersona } from "@/components/AlternatePersona";
 
-type ActivePage = 'home' | 'dashboard' | 'watch-party';
+type ActivePage = 'home' | 'dashboard' | 'watch-party' | 'alternate-persona';
 
 const Index = () => {
   const [activePage, setActivePage] = useState<ActivePage>('home');
@@ -18,6 +19,8 @@ const Index = () => {
         return <Dashboard />;
       case 'watch-party':
         return <WatchParty />;
+      case 'alternate-persona':
+        return <AlternatePersona />;
       default:
         return <HomePage />;
     }

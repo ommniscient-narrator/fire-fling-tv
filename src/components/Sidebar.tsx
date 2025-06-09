@@ -1,9 +1,9 @@
 
-import { Home, BarChart3, Users } from "lucide-react";
+import { Home, BarChart3, Users, User } from "lucide-react";
 
 interface SidebarProps {
   activePage: string;
-  onPageChange: (page: 'home' | 'dashboard' | 'watch-party') => void;
+  onPageChange: (page: 'home' | 'dashboard' | 'watch-party' | 'alternate-persona') => void;
 }
 
 export const Sidebar = ({ activePage, onPageChange }: SidebarProps) => {
@@ -22,6 +22,11 @@ export const Sidebar = ({ activePage, onPageChange }: SidebarProps) => {
       id: 'watch-party' as const,
       label: 'Watch Party',
       icon: Users,
+    },
+    {
+      id: 'alternate-persona' as const,
+      label: 'Alternate Persona',
+      icon: User,
     },
   ];
 
